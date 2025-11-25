@@ -7,7 +7,7 @@ export const metadata = {
     "Front-end developer & UX/UI design, specializing in creating immersive and intuitive user experiences, consistently pushing the boundaries of design innovation",
 };
 
-export const revalidate = 360;
+export const revalidate = 340;
 
 export default async function Page() {
   const data = await getAllWorks();
