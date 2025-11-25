@@ -86,14 +86,6 @@ export const metadata = {
       description:
         "Front-end developer & UX/UI designer crafting immersive and intuitive user experiences.",
     }),
-
-    "organization-logo": JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: "Paulo Vitor",
-      url: "https://paulovdev.site",
-      logo: "https://paulovdev.site/logo.jpg",
-    }),
   },
 };
 
