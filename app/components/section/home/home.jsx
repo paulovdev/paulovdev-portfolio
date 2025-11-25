@@ -20,10 +20,7 @@ const HomePage = ({ data }) => {
 
   return (
     <>
-      {typeof window === "undefined" ? null : (
-        <AnimatePresence>{loading && <Loader />}</AnimatePresence>
-      )}
-
+      {loading && <Loader />}
       {!loading && (
         <>
           <Nav />
