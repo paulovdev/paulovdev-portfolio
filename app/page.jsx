@@ -1,0 +1,15 @@
+import { getAllWorks } from "./(utils)/sanity-queries";
+import HomePage from "./components/section/home/home";
+
+export const metadata = {
+  title: "paulovdev - portfolio 2026",
+  description:
+    "Front-end developer & UX/UI design, specializing in creating immersive and intuitive user experiences, consistently pushing the boundaries of design innovation",
+};
+
+export const revalidate = 360;
+
+export default async function Page() {
+  const data = await getAllWorks();
+  return <HomePage data={data} />;
+}
