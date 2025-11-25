@@ -117,7 +117,7 @@ export default function Loader() {
 
         <motion.p
           ref={pRef}
-          className="fixed z-100 text-s text-[.8em] font-normal uppercase mix-blend-difference"
+          className="fixed z-100 text-s  text-[.8em] max-lg:text-[.7em]  font-normal uppercase mix-blend-difference"
         />
       </motion.div>
     </div>

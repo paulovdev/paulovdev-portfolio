@@ -23,7 +23,7 @@ const Footer = () => {
           variants={textSlideAnim}
           initial="initial"
           animate="animate"
-          className="text-s text-[.8em] font-normal flex items-center gap-2 uppercase"
+          className="text-s  text-[.8em] max-lg:text-[.7em]  font-normal flex items-center gap-2 uppercase"
         >
           <IoMdAlert className="text-s text-[1em]" />
           drag your mouse to navigate

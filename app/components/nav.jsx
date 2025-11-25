@@ -23,7 +23,7 @@ const Nav = () => {
       <div className="overflow-hidden">
         <ScrambleHover
           text="paulovdev"
-          className="text-s text-[.8em] font-normal cursor-pointer uppercase"
+          className="text-s  text-[.8em] max-lg:text-[.7em]  font-normal cursor-pointer uppercase"
         />
       </div>
 
@@ -38,7 +38,7 @@ const Nav = () => {
             <ScrambleHover
               text="about me"
               icon={<IoMdContact className="text-[1em]" />}
-              className="text-s text-[.8em] font-normal cursor-pointer uppercase"
+              className="text-s  text-[.8em] max-lg:text-[.7em]  font-normal cursor-pointer uppercase"
             />
           </NextLink>
         </motion.div>
@@ -55,7 +55,7 @@ const Nav = () => {
             >
               <ScrambleHover
                 text={s}
-                className="text-s text-[.8em] font-normal cursor-pointer uppercase"
+                className="text-s  text-[.8em] max-lg:text-[.7em]  font-normal cursor-pointer uppercase"
               />
             </motion.p>
           </div>

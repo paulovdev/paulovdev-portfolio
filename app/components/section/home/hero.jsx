@@ -92,7 +92,7 @@ export default function Hero({ data }) {
       className="relative w-[175vw] h-[225vh] flex items-center justify-center overflow-hidden bg-s"
     >
       <motion.div
-        className="grid grid-cols-3 grid-rows-3 gap-[250px] select-none relative"
+        className="relative grid grid-cols-3 grid-rows-3 gap-[250px] select-none max-lg:gap-[100px]"
         style={{ x: springX, y: springY }}
       >
         {items.map((item, i) => (
@@ -130,7 +130,7 @@ function Card({
 
   return (
     <motion.div
-      className="relative w-[800px] h-[450px] border border-p/10 overflow-hidden will-change-transform"
+      className="relative w-[800px] h-[450px] border border-p/10 overflow-hidden max-lg:w-[400px] max-lg:h-[250px] will-change-transform"
       initial="initial"
       animate="animate"
       custom={index}
@@ -170,7 +170,7 @@ function Card({
             <ScrambleHover
               text="VISIT WEBSITE"
               icon={<FaLink className="text-[1em]" />}
-              className="text-s text-[.8em] font-normal uppercase"
+              className="text-s  text-[.8em] max-lg:text-[.7em]  font-normal uppercase"
             />
           </motion.p>
         </a>
@@ -185,7 +185,7 @@ function Card({
         <div className="flex flex-col items-center gap-2">
           <div className="h-fit overflow-hidden">
             <motion.p
-              className="text-s text-[.8em] uppercase flex items-center gap-2"
+              className="text-s  text-[.8em] max-lg:text-[.7em]  uppercase flex items-center gap-2"
               initial={{ y: "100%" }}
               animate={{ y: hovered ? "0%" : "100%" }}
               transition={{ duration: 0.75, ease: [0.33, 1, 0.68, 1] }}
@@ -196,7 +196,7 @@ function Card({
 
           <div className="h-fit overflow-hidden">
             <motion.p
-              className="text-s text-[.8em] uppercase flex items-center gap-2"
+              className="text-s  text-[.8em] max-lg:text-[.7em]  uppercase flex items-center gap-2"
               initial={{ y: "100%" }}
               animate={{ y: hovered ? "0%" : "100%" }}
               transition={{
@@ -205,14 +205,14 @@ function Card({
                 delay: 0.1,
               }}
             >
-              <FaFolder className="text-s text-[.8em]" /> {title}
+              <FaFolder className="text-s  text-[.8em] max-lg:text-[.7em] " /> {title}
             </motion.p>
           </div>
         </div>
 
         <div className="h-fit overflow-hidden">
           <motion.p
-            className="text-s text-[.8em] uppercase flex items-center gap-2"
+            className="text-s  text-[.8em] max-lg:text-[.7em]  uppercase flex items-center gap-2"
             initial={{ y: "100%" }}
             animate={{ y: hovered ? "0%" : "100%" }}
             transition={{
