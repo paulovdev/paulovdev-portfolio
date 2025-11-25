@@ -10,9 +10,6 @@ export async function getAllWorks() {
       stack,
       image
     }`,
-    {},
-    {
-      cache: "force-cache",
-    }
+    {}
   );
 }
