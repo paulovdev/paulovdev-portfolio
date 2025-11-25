@@ -1,11 +1,12 @@
 "use client";
 import { useRef } from "react";
 
+const CHARS = "!<>-_\\/[]{}—=+*^?#________";
+
 export default function ScrambleHover({ text, icon = null, className = "" }) {
   const spanRef = useRef(null);
 
   function scrambleText(element, text) {
-    const chars = "!<>-_\\/[]{}—=+*^?#________";
     let frame = 0;
 
     const totalFrames = text.length * 15;
@@ -20,7 +21,7 @@ export default function ScrambleHover({ text, icon = null, className = "" }) {
           continue;
         }
 
-        const randomChar = chars[Math.floor(Math.random() * chars.length)];
+        const randomChar = CHARS[Math.floor(Math.random() * CHARS.length)];
         out += randomChar;
 
         if (frame > i * 15 + 25) {
