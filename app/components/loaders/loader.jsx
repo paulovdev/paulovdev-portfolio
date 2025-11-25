@@ -6,10 +6,10 @@ export default function Loader() {
   const [scope, animate] = useAnimate();
   const pRef = useRef(null);
 
-  function scrambleIn(element, text) {
-    const chars = "!<>-_\\/[]{}—=+*^?#________";
-    let frame = 0;
+  const CHARS = "!<>-_\\/[]{}—=+*^?#________";
 
+  function scrambleIn(element, text) {
+    let frame = 0;
     const totalFrames = text.length * 8;
     const resolved = Array(text.length).fill(false);
 
@@ -17,11 +17,8 @@ export default function Loader() {
       let out = "";
 
       for (let i = 0; i < text.length; i++) {
-        if (resolved[i]) {
-          out += text[i];
-        } else {
-          out += chars[Math.floor(Math.random() * chars.length)];
-        }
+        if (resolved[i]) out += text[i];
+        else out += CHARS[Math.floor(Math.random() * CHARS.length)];
 
         if (frame > i * 8 + 8) resolved[i] = true;
       }
@@ -37,7 +34,6 @@ export default function Loader() {
   }
 
   function scrambleOut(element, removeCount) {
-    const chars = "!<>-_\\/[]{}—=+*^?#________";
     let frame = 0;
 
     const text = element.textContent;
@@ -49,7 +45,7 @@ export default function Loader() {
 
       fading = fading.map((ch) =>
         Math.random() > 0.8
-          ? chars[Math.floor(Math.random() * chars.length)]
+          ? CHARS[Math.floor(Math.random() * CHARS.length)]
           : ch
       );
 
