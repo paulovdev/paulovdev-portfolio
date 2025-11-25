@@ -10,7 +10,7 @@ const azeret = Azeret_Mono({
 export const metadata = {
   metadataBase: new URL("https://paulovdev.site"),
 
-  title: "paulovdev — Front-end Developer & UX/UI Designer",
+  title: "PAULOVDEV - PORTFOLIO 2026",
   description:
     "Front-end developer & UX/UI design, specializing in creating immersive and intuitive user experiences, consistently pushing the boundaries of design innovation.",
 
@@ -35,7 +35,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     url: "https://paulovdev.site",
-    title: "paulovdev — Front-end Developer & UX/UI Designer",
+    title: "PAULOVDEV - PORTFOLIO 2026",
     description:
       "Front-end developer creating immersive digital experiences through clean code, smart interactions, and modern interface design.",
     siteName: "paulovdev",
@@ -80,7 +80,7 @@ export const metadata = {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
-      name: "paulovdev",
+      name: "PAULOVDEV - PORTFOLIO 2026",
       alternateName: "Paulo Vitor",
       url: "https://paulovdev.site",
       description:
