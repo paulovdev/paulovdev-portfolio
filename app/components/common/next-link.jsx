@@ -5,7 +5,7 @@ function slideInOut() {
   document.documentElement.animate(
     [
       { opacity: 1, transform: "translateY(0)" },
-      { opacity: 0.2, transform: "translateY(-35%)" },
+      { opacity: 0.5, transform: "translateY(-35%)" },
     ],
     {
       duration: 1200,

@@ -1,9 +1,9 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const CHARS = "!<>-_\\/[]{}—=+*^?#__";
 
-export default function ScrambleHover({ text, icon = null, className = "" }) {
+export default function Scramble({ text, icon = null, className = "" }) {
   const spanRef = useRef(null);
 
   useEffect(() => {
@@ -14,9 +14,7 @@ export default function ScrambleHover({ text, icon = null, className = "" }) {
       spanRef.current.style.height = rect.height + "px";
       spanRef.current.style.lineHeight = rect.height + "px";
     }
-  }, [text]);
-
-  function scrambleText(element, text) {
+    const el = spanRef.current;
     let frame = 0;
 
     const speed = text.length <= 8 ? 20 : 10;
@@ -41,24 +39,22 @@ export default function ScrambleHover({ text, icon = null, className = "" }) {
         }
       }
 
-      element.textContent = out;
+      el.textContent = out;
       frame++;
 
       if (frame <= totalFrames) requestAnimationFrame(update);
-      else element.textContent = text;
+      else el.textContent = text;
     }
 
     update();
-  }
+  }, [text]);
 
   return (
-    <span
-      className={`flex items-center gap-2 cursor-pointer ${className}`}
-      onMouseEnter={() => scrambleText(spanRef.current, text)}
-      onMouseLeave={() => (spanRef.current.textContent = text)}
-    >
+    <span className={`flex items-center gap-2 cursor-pointer ${className}`}>
       {icon && <span>{icon}</span>}
-      <span ref={spanRef}>{text}</span>
+      <span ref={spanRef} className="overflow-hidden">
+        {text}
+      </span>
     </span>
   );
 }

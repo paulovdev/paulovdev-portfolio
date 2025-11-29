@@ -8,8 +8,22 @@ export async function getAllWorks() {
       year,
       site,
       stack,
-      image
+      image,
+      "slug": slug.current
+    }`
+  );
+}
+export async function getWork(slug) {
+  return client.fetch(
+    `*[_type == "work" && slug.current == $slug][0]{
+      _id,
+      title,
+      year,
+      site,
+      stack,
+      image,
+      "slug": slug.current
     }`,
-    {}
+    { slug }
   );
 }

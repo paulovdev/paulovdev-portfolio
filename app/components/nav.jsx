@@ -23,22 +23,17 @@ const Nav = () => {
       <div className="overflow-hidden">
         <ScrambleHover
           text="paulovdev"
-          className="text-s  text-[.8em] max-lg:text-[.7em]  font-normal cursor-pointer uppercase"
+          className="text-s   text-[.8em] max-lg:text-[.7em] max-md:text-[.6em]  font-normal cursor-pointer uppercase"
         />
       </div>
 
       <div className="mr-4 overflow-hidden">
-        <motion.div
-          variants={textSlideAnim}
-          initial="initial"
-          animate="animate"
-          custom={1}
-        >
+        <motion.div {...textSlideAnim} custom={1}>
           <NextLink href={"/about"}>
             <ScrambleHover
-              text="about me"
+              text="about"
               icon={<IoMdContact className="text-[1em]" />}
-              className="text-s  text-[.8em] max-lg:text-[.7em]  font-normal cursor-pointer uppercase"
+              className="text-s   text-[.8em] max-lg:text-[.7em] max-md:text-[.6em]  font-normal cursor-pointer uppercase"
             />
           </NextLink>
         </motion.div>
@@ -47,15 +42,10 @@ const Nav = () => {
       <div className="flex items-center gap-2">
         {["gram", "x", "fb", "yt"].map((s, i) => (
           <div className="overflow-hidden" key={i}>
-            <motion.p
-              variants={textSlideAnim}
-              initial="initial"
-              animate="animate"
-              custom={2 + i}
-            >
+            <motion.p {...textSlideAnim} custom={2 + i}>
               <ScrambleHover
                 text={s}
-                className="text-s  text-[.8em] max-lg:text-[.7em]  font-normal cursor-pointer uppercase"
+                className="text-s   text-[.8em] max-lg:text-[.7em] max-md:text-[.6em]  font-normal cursor-pointer uppercase"
               />
             </motion.p>
           </div>

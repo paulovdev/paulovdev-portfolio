@@ -69,7 +69,7 @@ const About = () => {
               <ScrambleHover
                 text="BACK"
                 icon={<MdArrowBackIos className="text-[1em]" />}
-                className="text-p  text-[.8em] max-lg:text-[.7em] font-medium cursor-pointer uppercase"
+                className="text-p   text-[.8em] max-lg:text-[.7em] max-md:text-[.6em] font-medium cursor-pointer uppercase"
               />
             </NextLink>
           </motion.p>
@@ -84,7 +84,7 @@ const About = () => {
               initial="initial"
               animate="animate"
               custom={1}
-              className="text-p  text-[.8em] max-lg:text-[.7em]  font-medium uppercase flex items-center gap-2"
+              className="text-p   text-[.8em] max-lg:text-[.7em] max-md:text-[.6em]  font-medium uppercase flex items-center gap-2"
             >
               <FaFaceGrinWide /> Paulo Vitor Pimentel dos Santos
             </motion.h2>
@@ -96,7 +96,7 @@ const About = () => {
               initial="initial"
               animate="animate"
               custom={2}
-              className="text-p  text-[.8em] max-lg:text-[.7em]  font-medium uppercase flex items-center gap-2"
+              className="text-p   text-[.8em] max-lg:text-[.7em] max-md:text-[.6em]  font-medium uppercase flex items-center gap-2"
             >
               <MdChildFriendly /> Born in 2003
             </motion.p>
@@ -108,7 +108,7 @@ const About = () => {
               initial="initial"
               animate="animate"
               custom={3}
-              className="text-p  text-[.8em] max-lg:text-[.7em]  font-medium uppercase flex items-center gap-2"
+              className="text-p   text-[.8em] max-lg:text-[.7em] max-md:text-[.6em]  font-medium uppercase flex items-center gap-2"
             >
               <FaLocationDot /> Brazil - Rio de Janeiro
             </motion.p>
@@ -127,7 +127,7 @@ const About = () => {
                       initial="initial"
                       animate="animate"
                       custom={baseIndex + i}
-                      className="text-p  text-[.8em] max-lg:text-[.7em]  font-medium uppercase mb-1"
+                      className="text-p   text-[.8em] max-lg:text-[.7em] max-md:text-[.6em]  font-medium uppercase mb-1"
                     >
                       {line}
                     </motion.p>
