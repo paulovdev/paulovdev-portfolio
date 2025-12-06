@@ -53,7 +53,7 @@ export default function ScrambleHover({ text, icon = null, className = "" }) {
 
   return (
     <span
-      className={`flex items-center gap-2 cursor-pointer ${className}`}
+      className={`flex items-center gap-2  ${className}`}
       onMouseEnter={() => scrambleText(spanRef.current, text)}
       onMouseLeave={() => (spanRef.current.textContent = text)}
     >

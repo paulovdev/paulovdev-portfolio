@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import NextLink from "./common/next-link";
 import { IoMdContact } from "react-icons/io";
 import ScrambleHover from "./common/scramble-hover";
+import Link from "next/link";
 
 const textSlideAnim = {
   initial: { y: "100%" },
@@ -19,38 +19,26 @@ const textSlideAnim = {
 
 const Nav = () => {
   return (
-    <nav className="fixed top-0 left-0 p-5 w-full flex items-center justify-between z-100  mix-blend-difference select-none">
-      <div className="overflow-hidden">
+    <nav className="fixed top-0 left-0 p-5 w-full flex items-center justify-between z-100 mix-blend-difference select-none max-md:p-3">
+      <div className="overflow-hidden" data-cursor="hover">
         <ScrambleHover
           text="paulovdev"
-          className="text-s   text-[.8em] max-lg:text-[.7em] max-md:text-[.6em]  font-normal cursor-pointer uppercase"
+          className="text-s text-[.8em] max-lg:text-[.75em] max-md:text-[.7em] font-normal uppercase"
         />
       </div>
 
-      <div className="mr-4 overflow-hidden">
+      <div className="overflow-hidden" data-cursor="hover">
         <motion.div {...textSlideAnim} custom={1}>
-          <NextLink href={"/about"}>
+          <Link href={"/about"}>
             <ScrambleHover
               text="about"
               icon={<IoMdContact className="text-[1em]" />}
-              className="text-s   text-[.8em] max-lg:text-[.7em] max-md:text-[.6em]  font-normal cursor-pointer uppercase"
+              className="text-s text-[.8em] max-lg:text-[.75em] max-md:text-[.7em] font-normal uppercase cursor-default"
             />
-          </NextLink>
+          </Link>
         </motion.div>
       </div>
 
-      <div className="flex items-center gap-2">
-        {["gram", "x", "fb", "yt"].map((s, i) => (
-          <div className="overflow-hidden" key={i}>
-            <motion.p {...textSlideAnim} custom={2 + i}>
-              <ScrambleHover
-                text={s}
-                className="text-s   text-[.8em] max-lg:text-[.7em] max-md:text-[.6em]  font-normal cursor-pointer uppercase"
-              />
-            </motion.p>
-          </div>
-        ))}
-      </div>
     </nav>
   );
 };

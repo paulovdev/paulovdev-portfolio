@@ -163,7 +163,7 @@ export default function Hero({ filteredData, grid }) {
 
   return (
     <>
-      <section className="absolute w-full h-screen overflow-hidden bg-s ">
+      <section className="absolute w-full h-screen overflow-hidden grid-section">
         <motion.div
           style={{
             x: springX,
@@ -174,12 +174,12 @@ export default function Hero({ filteredData, grid }) {
             gridTemplateColumns: `repeat(${COLS}, 1fr)`,
             gridTemplateRows: `repeat(${ROWS}, 1fr)`,
           }}
-          className="absolute grid gap-50 p select-none active:cursor-move"
+          className="absolute grid gap-50 p select-none"
         >
           <AnimatePresence>
             {filteredData.map((item, i) => (
               <Card
-                key={`${item._id}-${grid}-${filteredData}`}
+                key={`${item._id}-${grid}-${filteredData}-sort`}
                 {...item}
                 index={i}
                 depth={Math.random() * 0.6 + 0.4}

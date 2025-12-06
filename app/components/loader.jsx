@@ -1,11 +1,12 @@
 "use client";
 import { motion, useAnimate } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { FaStarOfLife } from "react-icons/fa6";
 
 export default function Loader({ onFinish }) {
   const [scope, animate] = useAnimate();
   const pRef = useRef(null);
-
+  const starRef = useRef(null);
   const CHARS = "!<>-_\\/[]{}—=+*^?#__";
 
   const wait = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -84,8 +85,7 @@ export default function Loader({ onFinish }) {
   useEffect(() => {
     async function runAnim() {
       const p = pRef.current;
-      const clip = scope.current.querySelector(".clip-reveal");
-
+      const star = starRef.current;
       const fullText = "paulovdev - portfolio 2026";
 
       await scrambleIn(p, fullText);
@@ -98,19 +98,21 @@ export default function Loader({ onFinish }) {
       await wait(600);
 
       const rect = p.getBoundingClientRect();
-      const targetX = -rect.left + 20;
-      const targetY = -rect.top + 20;
 
-      await animate(
-        p,
-        { x: targetX, y: targetY },
+      animate(
+        star,
+        { x: 0, y: -450 },
         { duration: 1.1, ease: [0.76, 0, 0.24, 1] }
       );
-
       await animate(
-        clip,
-        { clipPath: "inset(0% 0% 0% 0%)" },
+        p,
+        { x: -rect.left + 20, y: -rect.top + 20 },
         { duration: 1.1, ease: [0.76, 0, 0.24, 1] }
+      );
+      await animate(
+        star,
+        { scale: 250 },
+        { duration: 1, ease: [0.76, 0, 0.24, 1] }
       );
 
       onFinish?.();
@@ -125,15 +127,19 @@ export default function Loader({ onFinish }) {
       className="fixed inset-0 w-screen h-screen z-300 overflow-hidden"
     >
       <motion.div className="loader-bg absolute inset-0 bg-p flex items-center justify-center">
-        <motion.div
-          className="clip-reveal absolute inset-0 bg-s"
-          initial={{ clipPath: "inset(100% 0% 100% 0%)" }}
-        />
-
         <motion.p
           ref={pRef}
-          className="fixed z-100 text-s  text-[.8em] max-lg:text-[.7em] max-md:text-[.6em] font-normal uppercase mix-blend-difference"
+          className="fixed z-100 text-s  text-[.8em] max-lg:text-[.75em] max-md:text-[.7em] font-normal uppercase mix-blend-difference"
         />
+        <motion.p
+          ref={starRef}
+          className="fixed  z-100 mix-blend-difference "
+          initial={{ opacity: 0, bottom: 25 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <FaStarOfLife className="text-s text-[2em] spin" />
+        </motion.p>
       </motion.div>
     </div>
   );

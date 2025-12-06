@@ -1,6 +1,6 @@
 import { Azeret_Mono } from "next/font/google";
 import "./globals.css";
-import { ViewTransitions } from "next-view-transitions";
+import CustomCursor from "./components/common/custom-cursor";
 
 const azeret = Azeret_Mono({
   variable: "--font-azeret",
@@ -91,15 +91,17 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#e5e4e0",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <ViewTransitions>
-      <html lang="en" className={azeret.variable}>
-        <body className="antialiased">{children}</body>
-      </html>
-    </ViewTransitions>
+    <html lang="en" className={azeret.variable}>
+      <body className="antialiased noise bg-s">
+        <CustomCursor />
+
+        {children}
+      </body>
+    </html>
   );
 }

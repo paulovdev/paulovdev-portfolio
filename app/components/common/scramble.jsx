@@ -50,7 +50,7 @@ export default function Scramble({ text, icon = null, className = "" }) {
   }, [text]);
 
   return (
-    <span className={`flex items-center gap-2 cursor-pointer ${className}`}>
+    <span className={`flex items-center gap-2  ${className}`}>
       {icon && <span>{icon}</span>}
       <span ref={spanRef} className="overflow-hidden">
         {text}

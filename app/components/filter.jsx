@@ -41,40 +41,42 @@ export function Filter({
     >
       <div className="w-fit h-[400px] flex flex-col items-start gap-4">
         <div className="mb-8 w-full flex items-center justify-between">
-          <div className="overflow-hidden">
+          <div className="overflow-hidden" data-cursor="hover">
             <motion.p
               variants={textSlideAnim}
               initial="initial"
               animate="animate"
-              className="text-s text-[.8em] max-lg:text-[.7em] max-md:text-[.6em] font-normal uppercase"
+              className="text-s text-[.8em] max-lg:text-[.75em] max-md:text-[.7em] font-normal uppercase"
             >
               FILTERS
             </motion.p>
           </div>
           <div
             className="overflow-hidden"
+            data-cursor="hover"
             onClick={() => setFilterModal(false)}
           >
             <motion.button
               variants={textSlideAnim}
               initial="initial"
               animate="animate"
+              data-cursor="hover"
             >
               <ScrambleHover
                 text="close"
-                className="text-s text-[.8em] max-lg:text-[.7em] max-md:text-[.6em] font-normal cursor-pointer uppercase"
+                className="text-s text-[.8em] max-lg:text-[.75em] max-md:text-[.7em] font-normal  uppercase"
               />
             </motion.button>
           </div>
         </div>
 
-        <div className="w-full overflow-hidden">
+        <div className="w-full overflow-hidden h-[75px]" data-cursor="hover">
           <motion.div
             variants={textSlideAnim}
             initial="initial"
             animate="animate"
           >
-            <label className="text-s text-[.7em] opacity-60 uppercase mb-1 block">
+            <label className="text-s text-[.7em] opacity-60 uppercase mb-2 block">
               Sort
             </label>
 
@@ -84,8 +86,8 @@ export function Filter({
                 setSort(e.target.value);
                 setFilterModal(false);
               }}
-              className="w-full bg-transparent border border-white/20 px-3 py-1 outline-none
-                        accent-s text-s text-[.8em] max-lg:text-[.7em] max-md:text-[.6em] uppercase"
+              className="w-full bg-transparent border border-white/20 px-3 py-3 rounded-[.75em] outline-none 
+                        accent-s text-s text-[.8em] max-lg:text-[.75em] max-md:text-[.7em] uppercase hover:border-s transition-all"
             >
               <option value="az" className="text-p">
                 A → Z
@@ -97,14 +99,14 @@ export function Filter({
           </motion.div>
         </div>
 
-        <div className="w-full overflow-hidden">
+        <div className="w-full overflow-hidden h-[75px]" data-cursor="hover">
           <motion.div
             variants={textSlideAnim}
             initial="initial"
             animate="animate"
             custom={1}
           >
-            <label className="text-s text-[.7em] opacity-60 uppercase mb-1 block">
+            <label className="text-s text-[.7em] opacity-60 uppercase mb-2 block">
               Year
             </label>
 
@@ -114,8 +116,8 @@ export function Filter({
                 setYear(e.target.value);
                 setFilterModal(false);
               }}
-              className="w-full bg-transparent border border-white/20 px-3 py-1 outline-none
-                        accent-s text-s text-[.8em] max-lg:text-[.7em] max-md:text-[.6em] uppercase "
+              className="w-full bg-transparent border border-white/20 px-3 py-3 rounded-[.75em] outline-none
+                        accent-s text-s text-[.8em] max-lg:text-[.75em] max-md:text-[.7em] uppercase hover:border-s transition-all"
             >
               <option value="all" className="text-p">
                 All Years
@@ -129,14 +131,14 @@ export function Filter({
           </motion.div>
         </div>
 
-        <div className="w-full overflow-hidden">
+        <div className="w-full overflow-hidden h-[75px]" data-cursor="hover">
           <motion.div
             variants={textSlideAnim}
             initial="initial"
             animate="animate"
             custom={2}
           >
-            <label className="text-s text-[.7em] opacity-60 uppercase mb-1 block">
+            <label className="text-s text-[.7em] opacity-60 uppercase mb-2 block">
               Stack
             </label>
 
@@ -144,10 +146,10 @@ export function Filter({
               value={stack}
               onChange={(e) => {
                 setStack(e.target.value);
-                setFilterModal(false); // FECHA O MODAL
+                setFilterModal(false);
               }}
-              className="w-full bg-transparent border border-white/20 px-3 py-1 outline-none
-                        accent-s text-s text-[.8em] max-lg:text-[.7em] max-md:text-[.6em] uppercase"
+              className="w-full bg-transparent border border-white/20 px-3 py-3 rounded-[.75em] outline-none
+                        accent-s text-s text-[.8em] max-lg:text-[.75em] max-md:text-[.7em] uppercase hover:border-s transition-all"
             >
               <option value="all" className="text-p">
                 All Stacks
@@ -161,14 +163,14 @@ export function Filter({
           </motion.div>
         </div>
 
-        <div className="w-full overflow-hidden">
+        <div className="w-full overflow-hidden h-[75px]" data-cursor="hover">
           <motion.div
             variants={textSlideAnim}
             initial="initial"
             animate="animate"
-            custom={2}
+            custom={3}
           >
-            <label className="text-s text-[.7em] opacity-60 uppercase mb-1 block">
+            <label className="text-s text-[.7em] opacity-60 uppercase mb-2 block">
               GRID
             </label>
 
@@ -178,8 +180,8 @@ export function Filter({
                 setGrid(e.target.value);
                 setFilterModal(false);
               }}
-              className="w-full bg-transparent border border-white/20 px-3 py-1 outline-none 
-  accent-s text-s text-[.8em] max-lg:text-[.7em] max-md:text-[.6em] uppercase"
+              className="w-full bg-transparent border border-white/20 px-3 py-3 rounded-[.75em] outline-none
+  accent-s text-s text-[.8em] max-lg:text-[.75em] max-md:text-[.7em] uppercase hover:border-s transition-all"
             >
               <option value="4x4" className="text-p">
                 4X4

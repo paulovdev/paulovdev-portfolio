@@ -22,12 +22,12 @@ const textSlideAnim = {
 const Footer = () => {
   const { setFilterModal } = useFilter();
   return (
-    <footer className="fixed bottom-0 left-0 p-5 w-full flex items-center justify-between z-100 mix-blend-difference">
+    <footer className="fixed bottom-0 left-0 p-5 w-full flex items-center justify-between z-100 mix-blend-difference max-md:p-3">
       <div className="overflow-hidden pointer-events-none">
         <motion.p
           {...textSlideAnim}
           custom={1}
-          className="text-s   text-[.8em] max-lg:text-[.7em] max-md:text-[.6em] font-normal flex items-center gap-2 uppercase"
+          className="text-s   text-[.8em] max-lg:text-[.75em] max-md:text-[.7em] font-normal flex items-center gap-2 uppercase"
         >
           <IoMdAlert className="text-s text-[1em]" />
           drag your mouse to navigate
@@ -38,11 +38,12 @@ const Footer = () => {
           {...textSlideAnim}
           custom={2}
           onClick={() => setFilterModal(true)}
+          data-cursor="hover"
         >
           <ScrambleHover
             text="FILTERS"
             icon={<BsFillFilterCircleFill className="text-[1em]" />}
-            className="text-s text-[.8em] max-lg:text-[.7em] max-md:text-[.6em]  font-normal cursor-pointer uppercase"
+            className="text-s text-[.8em] max-lg:text-[.75em] max-md:text-[.7em]  font-normal  uppercase"
           />
         </motion.button>
       </div>

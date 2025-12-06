@@ -2,7 +2,7 @@
 
 @theme {
   --color-p: #000000;
-  --color-s: #ffffff;
+  --color-s: #e5e4e0;
 
   --breakpoint-full-ds: 1900px;
   --breakpoint-ds: 1262px;
@@ -31,7 +31,7 @@ body {
   display: none;
 }
 
-/* .noise::before {
+.noise::before {
   position: fixed;
   top: 0;
   left: 0;
@@ -41,30 +41,14 @@ body {
   opacity: 0.03;
   z-index: 1000;
   pointer-events: none;
-  background: url("../../public/noise.gif");
+  background: url("/noise.gif");
 }
- */
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none !important;
+.spin {
+  animation: spin 2s linear infinite;
 }
 
-::view-transition-group(root) {
-  z-index: auto !important;
-}
-
-::view-transition-image-pair(root) {
-  isolation: isolate;
-  will-change: transform, opacity, clip-path;
-  z-index: 1;
-}
-
-::view-transition-new(root) {
-  z-index: 10000;
-  animation: none !important;
-}
-
-::view-transition-old(root) {
-  z-index: 1;
-  animation: none !important;
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

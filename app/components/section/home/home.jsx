@@ -39,9 +39,9 @@ const HomePage = ({ data }) => {
 
   return (
     <>
-      {/*     {loading && <Loader onFinish={() => setLoading(false)} />}
-       */}
-      {loading && (
+      {loading && <Loader onFinish={() => setLoading(false)} />}
+
+      {!loading && (
         <>
           <Nav />
           <main className="size-full">
